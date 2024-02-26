@@ -1,10 +1,19 @@
 from django.shortcuts import render
-from django.http import JsonResponse
+from django.http import HttpResponse
+from django.template import loader
 from .models import monsters
 
 # Create your views here.
 
+def Home(request):
+    template = loader.get_template('HomePage.html')
+    return HttpResponse(template.render())
+
 def MonstersJson(request):
     mons = monsters.objects.all().values()
-    monsList = list(mons)
-    return JsonResponse(monsList, safe=False)
+    template = loader.get_template('MonstersList.html')
+    context = {
+        'mons': mons,
+    }
+    return HttpResponse(template.render(context,request))
+
