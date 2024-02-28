@@ -17,3 +17,11 @@ def MonstersJson(request):
     }
     return HttpResponse(template.render(context,request))
 
+def details(request, id):
+    detailMons = monsters.objects.get(id=id)
+    template = loader.get_template('details.html')
+    context = {
+        'detailMons': detailMons,
+    }
+    return HttpResponse(template.render(context, request))
+

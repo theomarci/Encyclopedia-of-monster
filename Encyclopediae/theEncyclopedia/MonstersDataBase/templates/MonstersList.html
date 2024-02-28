@@ -3,7 +3,7 @@
     <body>
         <ul>
             {% for x in mons %}
-                <li>{{x.monsName}}</li>
+                <li><a href="details/{{ x.id }}">  {{x.monsName}}</a></li>
             {% endfor %}
         </ul>
     </body>
