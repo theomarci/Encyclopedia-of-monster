@@ -1,9 +1,15 @@
 
 # Encyclopedia of monsters
 
-One day, a group of fishermans from Ireland discovered an unknow Island, situated somewhere in the north atlantic. One month later, a lot of international scientists organized an expedition to explore this new land and index the wildlife.
+I'm very happy to present my first essential project in django.
 
-My website indexes the endemic animals of recent discoveries.
+My website is an encyclopedia of endemic creatures from my imagination.
+
+The story behind this work is very simple : An Irish fisherman crew after a storm discovered a new island in the north of Atlantic ocean. When they came back to their homeland, they narrated their discovery but no one believed them. However a group of international scientific organized an expedition to prove the fishermens words. 
+
+After passed during several month in this island, where they took notes about the wildlife, they return to their laboratory and create an encyclopedia of monsters.
+
+This site index the endemic animals of the nameless island.
 
 
 ## Tech Stack
@@ -30,6 +36,7 @@ My website indexes the endemic animals of recent discoveries.
 ## Authors
 
 - [Théo](https://github.com/theomarci)
+
 
 
 
