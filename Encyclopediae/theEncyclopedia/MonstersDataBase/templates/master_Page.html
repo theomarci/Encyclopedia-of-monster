@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The encyclopediae of endemic wildlife</title>
+    </head>
+
+    <body>
+        <header>
+            <div>
+                <title>{% block title %}{%endblock%}</title>
+            </div>
+            <nav>
+                <ol>
+                    <li><a href="/mons/home">Home</a></li>
+                    <li><a href="/mons/list">list</a></li>
+                </ol>
+            </nav>
+        </header>
+
+        <main>
+            {%block content %}
+            {% endblock %}
+        </main>
+    </body>
+</html>

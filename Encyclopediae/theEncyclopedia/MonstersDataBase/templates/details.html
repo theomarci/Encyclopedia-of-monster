@@ -1,6 +1,6 @@
-<!DOCTYPE html>
-<html>
-    <body>
+{% extends "master_Page.html" %}
+
+{% block content %}
         <h1>{{ detailMons.monsName }}</h1>
         <h2>{{ detailMons.monsScientificName }}</h2>
         <p>
@@ -11,5 +11,4 @@
             Biome : {{detailMons.monsBiome}}<br>
             Social Behaviour : {{detailMons.monsSocialBehaviour}}
         </p>
-    </body>
-</html>
+{% endblock %}
