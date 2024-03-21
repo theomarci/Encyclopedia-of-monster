@@ -18,8 +18,12 @@
         </header>
 
         <main>
-            {%block content %}
+            {% block navSort %}
             {% endblock %}
+            <div>
+                {%block content %}
+                {% endblock %}
+            </div>
         </main>
     </body>
 </html>
