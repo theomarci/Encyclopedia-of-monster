@@ -1,10 +1,12 @@
 .home {
-  background-color: rgb(1, 33, 7);
+  background-image: url("landscape.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   gap: 10px 10px;     
 }
 
 .block {
-  background-color: rgb(139, 210, 149);
+  background-color: rgb(139, 210, 149, 50%);
   display: grid; 
   grid-template-columns: 1fr 1fr 1fr; 
   grid-template-rows: 0.2fr 1fr;
@@ -14,10 +16,10 @@
   grid-column-end: 4;
   grid-row-start: 1;
   grid-row-end: 3;
+  box-shadow:10px 10px 135px 21px rgb(1, 20, 1);
 }
 
 .top {
-  background-color: rgb(230, 230, 138);
   grid-column-start: 1;
   grid-column-end: 4;
   display: grid; 
@@ -26,31 +28,33 @@
   margin: 10px;
 }
 
+.image {
+  background-image: url("Logos.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
 .title {
   grid-column-start: 2;
   grid-column-end: 3;
-  background-color: rgb(248, 72, 72);
+  background-color: rgb(251, 241, 224);
   text-align: center;
   margin-bottom: 30px;
   margin-left: 10px;
   margin-right: 10px;
   padding: 50px;
-  clip-path: polygon(
-      20% 0%,
-      80% 0%,
-      100% 100%, 
-      0% 100%);
-  transform: rotate(180deg);
+  border-radius: 20px;
 }
 
-.Titre {
+/* .Titre {
   transform: rotate(180deg);
-}
+} */
 
 .nav-bar {
   grid-column-start: 1;
   grid-column-end: 4;
-  background-color: rgb(155, 155, 243);
   border-style: none;
   border-radius: 20px;
   padding: 10px;
