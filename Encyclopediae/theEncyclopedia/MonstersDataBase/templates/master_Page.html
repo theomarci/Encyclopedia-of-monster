@@ -1,29 +1,31 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>The encyclopediae of endemic wildlife</title>
-    </head>
-
-    <body>
-        <header>
-            <div>
-                <title>{% block title %}{%endblock%}</title>
+<link rel="stylesheet" href="{% static 'front.css' %}">
+    <body class="home">
+        <div class="block">
+            <div class="top">
+                <div class="title">
+                    <h1 class="Titre">The encyclopediae of endemic wildlife</h1>
+                </div>
+                <div class="nav-bar">
+                    <div>
+                        <a href="/mons/home" class="btnNav">
+                            Home
+                        </a>
+                        <a href="/mons/list" class="btnNav">
+                            List
+                        </a>
+                    </div>
+                </div>
+                <div class="arrow">
+                </div>
             </div>
-            <nav>
-                <ol>
-                    <li><a href="/mons/home">Home</a></li>
-                    <li><a href="/mons/list">list</a></li>
-                </ol>
-            </nav>
-        </header>
 
-        <main>
-            {% block navSort %}
-            {% endblock %}
-            <div>
+            <div class="main">
                 {%block content %}
                 {% endblock %}
             </div>
-        </main>
+        </div>
     </body>
 </html>

@@ -1,0 +1,87 @@
+.home {
+  background-color: rgb(1, 33, 7);
+  gap: 10px 10px;     
+}
+
+.block {
+  background-color: rgb(139, 210, 149);
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr; 
+  grid-template-rows: 0.2fr 1fr;
+  margin: 20px;
+  border-radius: 30px;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.top {
+  background-color: rgb(230, 230, 138);
+  grid-column-start: 1;
+  grid-column-end: 4;
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr; 
+  grid-template-rows: 1fr 0.2fr;
+  margin: 10px;
+}
+
+.title {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  background-color: rgb(248, 72, 72);
+  text-align: center;
+  margin-bottom: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 50px;
+  clip-path: polygon(
+      20% 0%,
+      80% 0%,
+      100% 100%, 
+      0% 100%);
+  transform: rotate(180deg);
+}
+
+.Titre {
+  transform: rotate(180deg);
+}
+
+.nav-bar {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  background-color: rgb(155, 155, 243);
+  border-style: none;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.btnNav {
+  background-color: bisque;
+  padding: 1fr;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.main {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  margin: 20px;
+  background-color: rgb(251, 241, 224);
+  padding-left: 35px;
+  padding-right: 35px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: justify;
+  border-radius: 30px;
+}
+
+.Text {
+  border-style: solid;
+  padding: 10px;
+  text-align: center;
+}
