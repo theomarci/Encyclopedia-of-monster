@@ -5,4 +5,5 @@ urlpatterns = [
     path('home/', views.Home),
     path('list/', views.MonstersJson),
     path('list/details/<int:id>', views.details),
+    path('list/mammals', views.Mammals),
 ]

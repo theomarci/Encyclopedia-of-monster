@@ -25,3 +25,18 @@ def details(request, id):
     }
     return HttpResponse(template.render(context, request))
 
+def Mammals():
+    monsters = monsters.objects.all().values()
+    template = loader.get_template('MonstersList.html')
+    for i in monsters:
+        value = i.get("monsType")
+        if value == "Mammal":
+            mons = i
+            context = {
+                "mons": mons,
+            }
+    return HttpResponse(template.render(context))
+        
+        
+     
+
