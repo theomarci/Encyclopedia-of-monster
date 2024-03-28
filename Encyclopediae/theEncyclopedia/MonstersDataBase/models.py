@@ -14,3 +14,9 @@ class monsters(models.Model):
 
     def __str__(self):
         return f"{self.monsName}"
+
+#-----------------------------------------------------------TEST-----------------------------------------------------------------------------------
+
+class Character(models.Model):
+    name = models.CharField(max_length=100)
+    age = models.IntegerField()

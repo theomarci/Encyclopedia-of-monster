@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
 from .models import monsters
+from .forms import MyForms
 
 # Create your views here.
 
@@ -27,7 +28,7 @@ def details(request, id):
 
 def Mammals(request):
     Monsters = monsters.objects.all().values()
-    template = loader.get_template('MonstersList.html')
+    template = loader.get_template("MonstersList.html")
     mons= []
     for i in Monsters:
         value = i.get("monsType")
@@ -36,9 +37,28 @@ def Mammals(request):
     context = {
         "mons": mons,
     }
-    print(context)
-    return HttpResponse(template.render(context, request))
-        
-        
-     
+    return HttpResponse(template.render(context))
 
+#---------------------------------------------------------------------------------------------TEST---------------------------------------------------------
+
+def test(request):
+    template = loader.get_template("test.html")
+    return HttpResponse(template.render())
+
+def my_view(request):
+    if request.method == 'POST':
+        form = MyForms(request.POST)
+        if form.is_valid():
+            form.save()
+            return render(request, 'test.html')
+        else:
+            context = {
+                'form': form
+            }
+            return render(request, 'test.html', context)
+    else:
+        form = MyForms()
+    context = {
+        'form': form
+    }
+    return render(request, 'test.html', context)
