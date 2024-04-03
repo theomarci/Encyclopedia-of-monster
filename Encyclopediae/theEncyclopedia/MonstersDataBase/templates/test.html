@@ -4,7 +4,14 @@
 
 <body>
    <form method="post">
-        {% csrf_token %} {{ form.as_p }} <button type="submit"> Submit </button>
+    {% csrf_token %} 
+    <label for="id_name">Your Name : </label><br>
+    {{ form.name }}<br>
+    <label for="id_place"> Your place : </label><br>
+    {{ form.place }}<br>
+    <label for="id_comments"> comments : </label><br>
+    {{ form.message }}<br>
+    <button type="submit"> Submit </button>
    </form>
 </body>
 

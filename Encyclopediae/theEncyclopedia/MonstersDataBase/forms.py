@@ -1,8 +1,9 @@
-from django import forms 
-from django.core.exceptions import ValidationError
-from .models import Character
+from django import forms
+from .models import FeedbackForm
 
-class MyForms(forms.ModelForm):
-    class Meta:
-        model = Character
-        fields = '__all__'
+class Form(forms.ModelForm) : 
+    class Meta :
+        model = FeedbackForm
+        fields = ['name', 'place', 'message']
+
+

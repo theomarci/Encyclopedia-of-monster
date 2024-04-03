@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
 from .models import monsters
-from .forms import MyForms
+from .forms import Form
 
 # Create your views here.
 
@@ -41,24 +41,14 @@ def Mammals(request):
 
 #---------------------------------------------------------------------------------------------TEST---------------------------------------------------------
 
-def test(request):
-    template = loader.get_template("test.html")
-    return HttpResponse(template.render())
-
-def my_view(request):
-    if request.method == 'POST':
-        form = MyForms(request.POST)
-        if form.is_valid():
-            form.save()
+def feedback_view(request):
+    if request.method == 'POST' :
+        form = Form(request.POST)
+        if form.is_valid() :
             return render(request, 'test.html')
-        else:
-            context = {
-                'form': form
-            }
-            return render(request, 'test.html', context)
-    else:
-        form = MyForms()
-    context = {
-        'form': form
-    }
+    else : 
+        form = Form()
+        context = {
+            'form': form
+        }
     return render(request, 'test.html', context)

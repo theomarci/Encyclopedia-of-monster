@@ -17,6 +17,7 @@ class monsters(models.Model):
 
 #-----------------------------------------------------------TEST-----------------------------------------------------------------------------------
 
-class Character(models.Model):
-    name = models.CharField(max_length=100)
-    age = models.IntegerField()
+class FeedbackForm(models.Model):
+    name = models.CharField(max_length = 100)
+    place = models.CharField(max_length = 100)
+    message = models.TextField(max_length = 200)

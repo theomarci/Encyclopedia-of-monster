@@ -6,5 +6,5 @@ urlpatterns = [
     path('list/', views.MonstersJson),
     path('list/details/<int:id>', views.details),
     path('list/mammals', views.Mammals),
-    path('test/', views.my_view),
+    path('test/', views.feedback_view)
 ]
