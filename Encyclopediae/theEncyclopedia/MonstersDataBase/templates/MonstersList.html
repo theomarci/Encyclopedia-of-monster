@@ -8,14 +8,10 @@
                 <button class="btn btn-primary">Z - A</button>
             </div>
             <div>
-                <h5>Animals types</h5>
-                <button class"btn btn-primary">All animals</button><br>
-                <form action="mammals">
-                    <button class="btn btn-primary">Mammal</button><br>
-                <button class="btn btn-primary">Reptile</button><br>
-                <button class="btn btn-primary">Insect</button><br>
-                <button class="btn btn-primary">Bird</button><br>
-                <button class="btn btn-primary">Fish</button>
+                <form method="get">
+                    {{ filter.form.as_p }}
+                    <button type="submit">Search</button>
+               </form>
             </div>
             <div>
 
@@ -24,9 +20,9 @@
         </div>
 
         <ul>
-            {% for x in mons %}
-                <li><a href="details/{{ x.id }}">  {{x.monsName}}</a></li>
+            {% for mons in filter.qs %}
+            <li><a href="details/{{ mons.id }}"> {{ mons.monsName }}</a></li>
             {% endfor %}
-        </ul>
+          </ul>
         
 {% endblock %}

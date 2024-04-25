@@ -3,16 +3,15 @@
 {%block content %}
 
 <body>
-   <form method="post">
-    {% csrf_token %} 
-    <label for="id_name">Your Name : </label><br>
-    {{ form.name }}<br>
-    <label for="id_place"> Your place : </label><br>
-    {{ form.place }}<br>
-    <label for="id_comments"> comments : </label><br>
-    {{ form.message }}<br>
-    <button type="submit"> Submit </button>
-   </form>
+    <form method="get">
+         {{ filter.form.as_p }}
+         <button type="submit">Search</button>
+    </form>
+    <ul>
+      {% for mons in filter.qs %}
+      <li><a href="details/{{ mons.id }}"> {{ mons.monsName }}</a></li>
+      {% endfor %}
+    </ul>
 </body>
 
 {% endblock %}

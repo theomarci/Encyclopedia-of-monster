@@ -2,22 +2,25 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
 from .models import monsters
-from .forms import Form
+from .forms import UserFilter
 
 # Create your views here.
 
+#this the view for the home page
 def Home(request):
     template = loader.get_template('HomePage.html')
     return HttpResponse(template.render())
 
-def MonstersJson(request):
-    mons = monsters.objects.all().values()
+#this the view for the list
+def search(request):
+    Mons_Filter = UserFilter(request.GET, queryset= monsters.objects.all().values())
     template = loader.get_template('MonstersList.html')
     context = {
-        'mons': mons,
-    }
-    return HttpResponse(template.render(context,request))
+        'filter': Mons_Filter,
+        }
+    return HttpResponse(template.render(context, request))
 
+# this is the view for the details of each animals
 def details(request, id):
     detailMons = monsters.objects.get(id=id)
     template = loader.get_template('details.html')
@@ -26,29 +29,3 @@ def details(request, id):
     }
     return HttpResponse(template.render(context, request))
 
-def Mammals(request):
-    Monsters = monsters.objects.all().values()
-    template = loader.get_template("MonstersList.html")
-    mons= []
-    for i in Monsters:
-        value = i.get("monsType")
-        if value == "Mammal":
-            mons.append(i)
-    context = {
-        "mons": mons,
-    }
-    return HttpResponse(template.render(context))
-
-#---------------------------------------------------------------------------------------------TEST---------------------------------------------------------
-
-def feedback_view(request):
-    if request.method == 'POST' :
-        form = Form(request.POST)
-        if form.is_valid() :
-            return render(request, 'test.html')
-    else : 
-        form = Form()
-        context = {
-            'form': form
-        }
-    return render(request, 'test.html', context)

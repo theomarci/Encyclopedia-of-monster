@@ -1,9 +1,14 @@
-from django import forms
-from .models import FeedbackForm
+from .models import monsters
+import django_filters
 
-class Form(forms.ModelForm) : 
-    class Meta :
-        model = FeedbackForm
-        fields = ['name', 'place', 'message']
+
+class UserFilter(django_filters.FilterSet):
+    class Meta:
+        # reach the data base
+        model = monsters
+        # select the right fields to filter objects of the table
+        fields = ['Type']
+
+
 
 
